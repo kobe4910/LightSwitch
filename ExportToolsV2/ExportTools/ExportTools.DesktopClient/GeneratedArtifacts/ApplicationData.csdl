@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Infoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PID" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Photo" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="Name" Type="Edm.String" MaxLength="255" />
+    <Property Name="Sex" Type="Edm.String" MaxLength="255" />
+    <Property Name="BirthDate" Type="Edm.DateTime" />
+    <Property Name="Nation" Type="Edm.String" MaxLength="255" />
+    <Property Name="Native" Type="Edm.String" MaxLength="255" />
+    <Property Name="Politics" Type="Edm.String" MaxLength="255" />
+    <Property Name="Health" Type="Edm.String" MaxLength="255" />
+    <Property Name="ProJob" Type="Edm.String" MaxLength="255" />
+    <Property Name="Speciality" Type="Edm.String" MaxLength="255" />
+    <Property Name="BirthPlace" Type="Edm.String" MaxLength="255" />
+    <Property Name="WorkDate" Type="Edm.DateTime" />
+    <Property Name="PartyDate" Type="Edm.DateTime" />
+    <Property Name="Duty" Type="Edm.String" MaxLength="255" />
+    <Property Name="Rank" Type="Edm.String" MaxLength="255" />
+    <Property Name="JobTitle" Type="Edm.String" MaxLength="255" />
+    <Property Name="Major" Type="Edm.String" MaxLength="255" />
+    <Property Name="Character" Type="Edm.String" MaxLength="255" />
+    <Property Name="Interest" Type="Edm.String" MaxLength="255" />
+    <Property Name="XianRen" Type="Edm.String" MaxLength="255" />
+    <Property Name="NiRen" Type="Edm.String" MaxLength="255" />
+    <Property Name="NiMian" Type="Edm.String" MaxLength="255" />
+    <Property Name="WorkExp" Type="Edm.String" MaxLength="255" />
+    <Property Name="RewardPunish" Type="Edm.String" MaxLength="255" />
+    <Property Name="Exam" Type="Edm.String" MaxLength="255" />
+    <Property Name="Reason" Type="Edm.String" MaxLength="255" />
+    <Property Name="FullEdu" Type="Edm.String" MaxLength="255" />
+    <Property Name="FUniMajor" Type="Edm.String" MaxLength="255" />
+    <Property Name="PartEdu" Type="Edm.String" MaxLength="255" />
+    <Property Name="PUniMajor" Type="Edm.String" MaxLength="255" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SocialRel" Relationship="LightSwitchApplication.SocialRel_Infoes" ToRole="SocialRel" FromRole="Infoes" />
+  </EntityType>
+  <EntityType Name="SocialRel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RelTitle" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="RelName" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="RelBirthDate" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="RelParty" Type="Edm.String" MaxLength="255" />
+    <Property Name="RelComJob" Type="Edm.String" MaxLength="255" />
+    <Property Name="ChuJiRel_ChuJiInfoes1" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Infoes" Relationship="LightSwitchApplication.SocialRel_Infoes" ToRole="Infoes" FromRole="SocialRel" />
+  </EntityType>
+  <Association Name="SocialRel_Infoes">
+    <End Role="Infoes" Type="LightSwitchApplication.Infoes" Multiplicity="1" />
+    <End Role="SocialRel" Type="LightSwitchApplication.SocialRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Infoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SocialRel">
+        <PropertyRef Name="ChuJiRel_ChuJiInfoes1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="InfoesSet" EntityType="LightSwitchApplication.Infoes" />
+    <EntitySet Name="SocialRels" EntityType="LightSwitchApplication.SocialRel" />
+    <AssociationSet Name="SocialRel_Infoes" Association="LightSwitchApplication.SocialRel_Infoes">
+      <End Role="Infoes" EntitySet="InfoesSet" />
+      <End Role="SocialRel" EntitySet="SocialRels" />
+    </AssociationSet>
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

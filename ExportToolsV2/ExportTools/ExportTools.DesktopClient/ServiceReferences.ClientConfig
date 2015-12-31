@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="SLoginServicesSoap" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://passport.shu.edu.cn:8080/services/sloginservices.asmx"
+                binding="basicHttpBinding" bindingConfiguration="SLoginServicesSoap"
+                contract="TeacherInfo.SLoginServicesSoap" name="SLoginServicesSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

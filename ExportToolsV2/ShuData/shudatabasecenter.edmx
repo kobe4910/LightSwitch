@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="shudatabasecenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“shudatabasecenter.dbo.shu_teacher_all”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="shu_teacher_all">
+          <Key>
+            <PropertyRef Name="GH" />
+            <PropertyRef Name="codesex" />
+            <PropertyRef Name="codestaffgroup" />
+            <PropertyRef Name="codestaffsubgroup" />
+            <PropertyRef Name="codedepartment2" />
+            <PropertyRef Name="codeedu" />
+            <PropertyRef Name="codezj" />
+          </Key>
+          <Property Name="GH" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="30" />
+          <Property Name="codesex" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="sex" Type="nvarchar" MaxLength="2" />
+          <Property Name="codenation" Type="nvarchar" MaxLength="2" />
+          <Property Name="nation" Type="nvarchar" MaxLength="50" />
+          <Property Name="sfz" Type="nvarchar" MaxLength="20" />
+          <Property Name="birthday" Type="nvarchar" MaxLength="8" />
+          <Property Name="JXRQ" Type="nvarchar" MaxLength="8" />
+          <Property Name="CJGZRQ" Type="nvarchar" MaxLength="8" />
+          <Property Name="codepoli" Type="nvarchar" MaxLength="2" />
+          <Property Name="poli" Type="nvarchar" MaxLength="40" />
+          <Property Name="polidata" Type="nvarchar" MaxLength="8" />
+          <Property Name="codestaffgroup" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="staffgroup" Type="nvarchar" MaxLength="20" />
+          <Property Name="codestaffsubgroup" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="staffsubgroup" Type="nvarchar" MaxLength="20" />
+          <Property Name="codedepartment" Type="nchar" MaxLength="4" />
+          <Property Name="codedepartment2" Type="nchar" MaxLength="8" Nullable="false" />
+          <Property Name="department" Type="nvarchar" MaxLength="40" />
+          <Property Name="department2" Type="nvarchar" MaxLength="40" />
+          <Property Name="codeedu" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="education" Type="nvarchar" MaxLength="20" />
+          <Property Name="college" Type="nvarchar" MaxLength="180" />
+          <Property Name="xw" Type="nvarchar" MaxLength="20" />
+          <Property Name="codezc" Type="nvarchar" MaxLength="3" />
+          <Property Name="zc" Type="nvarchar" MaxLength="60" />
+          <Property Name="zw" Type="nvarchar" MaxLength="50" />
+          <Property Name="codezj" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="zj" Type="nvarchar" MaxLength="60" />
+          <Property Name="xk" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="shudatabasecenterModelStoreContainer">
+          <EntitySet Name="shu_teacher_all" EntityType="Self.shu_teacher_all" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [shu_teacher_all].[GH] AS [GH], 
+    [shu_teacher_all].[name] AS [name], 
+    [shu_teacher_all].[codesex] AS [codesex], 
+    [shu_teacher_all].[sex] AS [sex], 
+    [shu_teacher_all].[codenation] AS [codenation], 
+    [shu_teacher_all].[nation] AS [nation], 
+    [shu_teacher_all].[sfz] AS [sfz], 
+    [shu_teacher_all].[birthday] AS [birthday], 
+    [shu_teacher_all].[JXRQ] AS [JXRQ], 
+    [shu_teacher_all].[CJGZRQ] AS [CJGZRQ], 
+    [shu_teacher_all].[codepoli] AS [codepoli], 
+    [shu_teacher_all].[poli] AS [poli], 
+    [shu_teacher_all].[polidata] AS [polidata], 
+    [shu_teacher_all].[codestaffgroup] AS [codestaffgroup], 
+    [shu_teacher_all].[staffgroup] AS [staffgroup], 
+    [shu_teacher_all].[codestaffsubgroup] AS [codestaffsubgroup], 
+    [shu_teacher_all].[staffsubgroup] AS [staffsubgroup], 
+    [shu_teacher_all].[codedepartment] AS [codedepartment], 
+    [shu_teacher_all].[codedepartment2] AS [codedepartment2], 
+    [shu_teacher_all].[department] AS [department], 
+    [shu_teacher_all].[department2] AS [department2], 
+    [shu_teacher_all].[codeedu] AS [codeedu], 
+    [shu_teacher_all].[education] AS [education], 
+    [shu_teacher_all].[college] AS [college], 
+    [shu_teacher_all].[xw] AS [xw], 
+    [shu_teacher_all].[codezc] AS [codezc], 
+    [shu_teacher_all].[zc] AS [zc], 
+    [shu_teacher_all].[zw] AS [zw], 
+    [shu_teacher_all].[codezj] AS [codezj], 
+    [shu_teacher_all].[zj] AS [zj], 
+    [shu_teacher_all].[xk] AS [xk]
+    FROM [dbo].[shu_teacher_all] AS [shu_teacher_all]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shudatabasecenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="shu_teacher_all">
+          <Key>
+            <PropertyRef Name="GH" />
+            <PropertyRef Name="codesex" />
+            <PropertyRef Name="codestaffgroup" />
+            <PropertyRef Name="codestaffsubgroup" />
+            <PropertyRef Name="codedepartment2" />
+            <PropertyRef Name="codeedu" />
+            <PropertyRef Name="codezj" />
+          </Key>
+          <Property Name="GH" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="codesex" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="codenation" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="nation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sfz" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="JXRQ" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="CJGZRQ" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="codepoli" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="poli" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="polidata" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="codestaffgroup" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="staffgroup" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="codestaffsubgroup" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="staffsubgroup" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="codedepartment" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="codedepartment2" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="department" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="department2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="codeedu" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="education" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="college" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="xw" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="codezc" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="zc" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="zw" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codezj" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="zj" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="xk" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="shudatabasecenterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="shu_teacher_all" EntityType="Self.shu_teacher_all" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="shudatabasecenterModelStoreContainer" CdmEntityContainer="shudatabasecenterEntities">
+          <EntitySetMapping Name="shu_teacher_all">
+            <EntityTypeMapping TypeName="shudatabasecenterModel.shu_teacher_all">
+              <MappingFragment StoreEntitySet="shu_teacher_all">
+                <ScalarProperty Name="GH" ColumnName="GH" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="codesex" ColumnName="codesex" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="codenation" ColumnName="codenation" />
+                <ScalarProperty Name="nation" ColumnName="nation" />
+                <ScalarProperty Name="sfz" ColumnName="sfz" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="JXRQ" ColumnName="JXRQ" />
+                <ScalarProperty Name="CJGZRQ" ColumnName="CJGZRQ" />
+                <ScalarProperty Name="codepoli" ColumnName="codepoli" />
+                <ScalarProperty Name="poli" ColumnName="poli" />
+                <ScalarProperty Name="polidata" ColumnName="polidata" />
+                <ScalarProperty Name="codestaffgroup" ColumnName="codestaffgroup" />
+                <ScalarProperty Name="staffgroup" ColumnName="staffgroup" />
+                <ScalarProperty Name="codestaffsubgroup" ColumnName="codestaffsubgroup" />
+                <ScalarProperty Name="staffsubgroup" ColumnName="staffsubgroup" />
+                <ScalarProperty Name="codedepartment" ColumnName="codedepartment" />
+                <ScalarProperty Name="codedepartment2" ColumnName="codedepartment2" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="department2" ColumnName="department2" />
+                <ScalarProperty Name="codeedu" ColumnName="codeedu" />
+                <ScalarProperty Name="education" ColumnName="education" />
+                <ScalarProperty Name="college" ColumnName="college" />
+                <ScalarProperty Name="xw" ColumnName="xw" />
+                <ScalarProperty Name="codezc" ColumnName="codezc" />
+                <ScalarProperty Name="zc" ColumnName="zc" />
+                <ScalarProperty Name="zw" ColumnName="zw" />
+                <ScalarProperty Name="codezj" ColumnName="codezj" />
+                <ScalarProperty Name="zj" ColumnName="zj" />
+                <ScalarProperty Name="xk" ColumnName="xk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

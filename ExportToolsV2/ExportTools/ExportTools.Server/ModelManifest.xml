@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.Server\DataSources\ApplicationData\InfoesSet.lsml" Checksum="3E0F79BEFCB642C8E1402EDC869A3B4A802CC1BC6B5EFF24368BB3E6CCE4976E" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.Server\DataSources\ApplicationData\SocialRels.lsml" Checksum="5836B5FF47836FBFE05CAF191744014D40119B71813EEFD70AC3F26B6843C0B6" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.Server\Properties\DataSources\ApplicationData.lsml" Checksum="E6FEEAC3B4A850AAC5F0029259A0B9F8C1BD45F2950D17BD8D6664B9422E6AD6" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.Server\Properties\Service.lsml" Checksum="CB961449EDCDCF4910B78669133F03AF38441FF07798E38AD0DA46A19C3BA55F" />
+  </Documents>
+</ModelDocumentManifest>

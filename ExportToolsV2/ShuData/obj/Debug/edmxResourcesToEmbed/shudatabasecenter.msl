@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="shudatabasecenterModelStoreContainer" CdmEntityContainer="shudatabasecenterEntities">
+    <EntitySetMapping Name="shu_teacher_all">
+      <EntityTypeMapping TypeName="shudatabasecenterModel.shu_teacher_all">
+        <MappingFragment StoreEntitySet="shu_teacher_all">
+          <ScalarProperty Name="GH" ColumnName="GH" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="codesex" ColumnName="codesex" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="codenation" ColumnName="codenation" />
+          <ScalarProperty Name="nation" ColumnName="nation" />
+          <ScalarProperty Name="sfz" ColumnName="sfz" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="JXRQ" ColumnName="JXRQ" />
+          <ScalarProperty Name="CJGZRQ" ColumnName="CJGZRQ" />
+          <ScalarProperty Name="codepoli" ColumnName="codepoli" />
+          <ScalarProperty Name="poli" ColumnName="poli" />
+          <ScalarProperty Name="polidata" ColumnName="polidata" />
+          <ScalarProperty Name="codestaffgroup" ColumnName="codestaffgroup" />
+          <ScalarProperty Name="staffgroup" ColumnName="staffgroup" />
+          <ScalarProperty Name="codestaffsubgroup" ColumnName="codestaffsubgroup" />
+          <ScalarProperty Name="staffsubgroup" ColumnName="staffsubgroup" />
+          <ScalarProperty Name="codedepartment" ColumnName="codedepartment" />
+          <ScalarProperty Name="codedepartment2" ColumnName="codedepartment2" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="department2" ColumnName="department2" />
+          <ScalarProperty Name="codeedu" ColumnName="codeedu" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="college" ColumnName="college" />
+          <ScalarProperty Name="xw" ColumnName="xw" />
+          <ScalarProperty Name="codezc" ColumnName="codezc" />
+          <ScalarProperty Name="zc" ColumnName="zc" />
+          <ScalarProperty Name="zw" ColumnName="zw" />
+          <ScalarProperty Name="codezj" ColumnName="codezj" />
+          <ScalarProperty Name="zj" ColumnName="zj" />
+          <ScalarProperty Name="xk" ColumnName="xk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

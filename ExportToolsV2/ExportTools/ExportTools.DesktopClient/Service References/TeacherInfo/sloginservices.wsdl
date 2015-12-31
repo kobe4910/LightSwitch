@@ -1,0 +1,1888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://passport.shu.edu.cn/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://passport.shu.edu.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://passport.shu.edu.cn/">
+      <s:element name="ValidByEd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidByEdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidByEdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShuSoapHeader" type="tns:ShuSoapHeader" />
+      <s:complexType name="ShuSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ValidAtShuByEd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidAtShuByEdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidAtShuByEdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidStudentByEd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidStudentByEdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidStudentByEdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidStudentByEdAndReturnCardDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDetail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidStudentByEdAndReturnCardDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidStudentByEdAndReturnCardDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDetail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMobileRandnum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobiles" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contents" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMobileRandnumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateMobileRandnumResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMobileRandnumAndPersno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contents" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMobileRandnumAndPersnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateMobileRandnumAndPersnoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidByDyEd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dypassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidByDyEdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidByDyEdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MustValidByDyEd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dypassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MustValidByDyEdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MustValidByDyEdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmailAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmailAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoForSbc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoForSbcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailInfoForSbcResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoForDag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoForDagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailInfoForDagResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoFormForSfz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sfzS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoFormForSfzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailInfoFormForSfzResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForJwc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForJwcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoForJwcResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailAddressForInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailAddressForInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmailAddressForInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuestUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuestUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGuestUserInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSfz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sfz" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSfzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateSfzResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersNoFromSfz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sfz" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersNoFromSfzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersNoFromSfzResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoFromICChipNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chipno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoFromICChipNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoFromICChipNoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersCardInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhotoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnLockCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentInfoForCie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passportno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentInfoForCieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentInfoForCieResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseInfoFromICChipNoForJszx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passportno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseInfoFromICChipNoForJszxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCourseInfoFromICChipNoForJszxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersInfoForDag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersInfoForDagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersInfoForDagResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForJwc2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForJwc2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoForJwc2Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForSbc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForSbcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoForSbcResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptparemtInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDeptparemtInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptparemtInfoResult" type="tns:ArrayOfTab_dept_info" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTab_dept_info">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tab_dept_info" nillable="true" type="tns:tab_dept_info" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tab_dept_info">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dept_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dept_type_ID" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="higher_dept_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mang_dept_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dept_func" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="dept_state" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="dept_grade" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab_pers_infos" type="tns:ArrayOfTab_pers_info" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTab_pers_info">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tab_pers_info" nillable="true" type="tns:tab_pers_info" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tab_pers_info">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pers_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pers_type_ID" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="card_state" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_nickname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pers_sex" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="idcard_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_pin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bank_acct_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bank_card_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_birthday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_inday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_outday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_nation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_func" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_salut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_addr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_cangetnewcard" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="b_getcard" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="b_haveoldcard" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="b_giveoldcard" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="getcard_time" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="oper_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="randpassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="checknum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="webLoginCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="mobBind" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_mobile_old" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_mobile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mobBindDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_user_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="def_status" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Authorize_teacher" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Receipt_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="medicalweal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="purview" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="purview_dept" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ldap_status" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="ipCheckType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPost" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tmp_result" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab_pers_type" type="tns:tab_pers_type" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab_dept_info" type="tns:tab_dept_info" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tab_pers_type">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="pers_type_Id" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pers_type_state" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers_group_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab_pers_infos" type="tns:ArrayOfTab_pers_info" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudentDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentDetailInfoFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentDetailInfoFormResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForFcc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForFccResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoForFccResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShuPersInfoForInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShuPersInfoForInfoResult" type="tns:shu_teacher_all" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="shu_teacher_all">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codesex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codenation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sfz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="birthday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JXRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CJGZRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codepoli" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="poli" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="polidata" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codestaffgroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="staffgroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codestaffsubgroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="staffsubgroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codedepartment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codedepartment2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="department" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="department2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codeedu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="education" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="college" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xw" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codezc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zw" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codezj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xk" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidByEdSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidByEd" />
+  </wsdl:message>
+  <wsdl:message name="ValidByEdSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidByEdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidByEdShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidAtShuByEdSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidAtShuByEd" />
+  </wsdl:message>
+  <wsdl:message name="ValidAtShuByEdSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidAtShuByEdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidAtShuByEdShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidStudentByEd" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidStudentByEdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdAndReturnCardDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidStudentByEdAndReturnCardDetail" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdAndReturnCardDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidStudentByEdAndReturnCardDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidStudentByEdAndReturnCardDetailShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRandnum" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRandnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumAndPersnoSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRandnumAndPersno" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumAndPersnoSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRandnumAndPersnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMobileRandnumAndPersnoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidByDyEdSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidByDyEd" />
+  </wsdl:message>
+  <wsdl:message name="ValidByDyEdSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidByDyEdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidByDyEdShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="MustValidByDyEdSoapIn">
+    <wsdl:part name="parameters" element="tns:MustValidByDyEd" />
+  </wsdl:message>
+  <wsdl:message name="MustValidByDyEdSoapOut">
+    <wsdl:part name="parameters" element="tns:MustValidByDyEdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MustValidByDyEdShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetShuGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuGroupShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForSbcSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoForSbc" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForSbcSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoForSbcResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForSbcShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForDagSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoForDag" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForDagSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoForDagResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoForDagShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormForSfzSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoFormForSfz" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormForSfzSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoFormForSfzResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormForSfzShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwcSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForJwc" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwcSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForJwcResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwcShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressForInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmailAddressForInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressForInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailAddressForInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddressForInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGuestUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGuestUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestUserInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSfzSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSfz" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSfzSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSfzResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSfzShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersNoFromSfzSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersNoFromSfz" />
+  </wsdl:message>
+  <wsdl:message name="GetPersNoFromSfzSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersNoFromSfzResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersNoFromSfzShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoFromICChipNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoFromICChipNo" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoFromICChipNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoFromICChipNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoFromICChipNoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPersCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersCardInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhoto" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UnLockCardSoapIn">
+    <wsdl:part name="parameters" element="tns:UnLockCard" />
+  </wsdl:message>
+  <wsdl:message name="UnLockCardSoapOut">
+    <wsdl:part name="parameters" element="tns:UnLockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnLockCardShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoForCieSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentInfoForCie" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoForCieSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentInfoForCieResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentInfoForCieShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseInfoFromICChipNoForJszxSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourseInfoFromICChipNoForJszx" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseInfoFromICChipNoForJszxSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourseInfoFromICChipNoForJszxResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseInfoFromICChipNoForJszxShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersInfoForDagSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersInfoForDag" />
+  </wsdl:message>
+  <wsdl:message name="GetPersInfoForDagSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersInfoForDagResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersInfoForDagShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwc2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForJwc2" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwc2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForJwc2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForJwc2ShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForSbcSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForSbc" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForSbcSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForSbcResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForSbcShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptparemtInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeptparemtInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptparemtInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptparemtInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptparemtInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoForm" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentDetailInfoFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentDetailInfoFormShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForFccSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForFcc" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForFccSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForFccResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForFccShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShuPersInfoForInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShuPersInfoForInfoShuSoapHeader">
+    <wsdl:part name="ShuSoapHeader" element="tns:ShuSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="SLoginServicesSoap">
+    <wsdl:operation name="ValidByEd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口1</wsdl:documentation>
+      <wsdl:input message="tns:ValidByEdSoapIn" />
+      <wsdl:output message="tns:ValidByEdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidAtShuByEd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口2</wsdl:documentation>
+      <wsdl:input message="tns:ValidAtShuByEdSoapIn" />
+      <wsdl:output message="tns:ValidAtShuByEdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口3</wsdl:documentation>
+      <wsdl:input message="tns:ValidStudentByEdSoapIn" />
+      <wsdl:output message="tns:ValidStudentByEdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEdAndReturnCardDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口4</wsdl:documentation>
+      <wsdl:input message="tns:ValidStudentByEdAndReturnCardDetailSoapIn" />
+      <wsdl:output message="tns:ValidStudentByEdAndReturnCardDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口5</wsdl:documentation>
+      <wsdl:input message="tns:ValidateMobileRandnumSoapIn" />
+      <wsdl:output message="tns:ValidateMobileRandnumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnumAndPersno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口11</wsdl:documentation>
+      <wsdl:input message="tns:ValidateMobileRandnumAndPersnoSoapIn" />
+      <wsdl:output message="tns:ValidateMobileRandnumAndPersnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidByDyEd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口6</wsdl:documentation>
+      <wsdl:input message="tns:ValidByDyEdSoapIn" />
+      <wsdl:output message="tns:ValidByDyEdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MustValidByDyEd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口7</wsdl:documentation>
+      <wsdl:input message="tns:MustValidByDyEdSoapIn" />
+      <wsdl:output message="tns:MustValidByDyEdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口8</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentInfoSoapIn" />
+      <wsdl:output message="tns:GetStudentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口9 </wsdl:documentation>
+      <wsdl:input message="tns:GetEmailAddressSoapIn" />
+      <wsdl:output message="tns:GetEmailAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口10</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoSoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口14</wsdl:documentation>
+      <wsdl:input message="tns:GetShuGroupSoapIn" />
+      <wsdl:output message="tns:GetShuGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口12</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailInfoSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForSbc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口13</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailInfoForSbcSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailInfoForSbcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForDag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口23</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailInfoForDagSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailInfoForDagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoFormForSfz">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口15</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailInfoFormForSfzSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailInfoFormForSfzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口16</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoForJwcSoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoForJwcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddressForInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口17</wsdl:documentation>
+      <wsdl:input message="tns:GetEmailAddressForInfoSoapIn" />
+      <wsdl:output message="tns:GetEmailAddressForInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口18</wsdl:documentation>
+      <wsdl:input message="tns:GetGuestUserInfoSoapIn" />
+      <wsdl:output message="tns:GetGuestUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSfz">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口19</wsdl:documentation>
+      <wsdl:input message="tns:ValidateSfzSoapIn" />
+      <wsdl:output message="tns:ValidateSfzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersNoFromSfz">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口25</wsdl:documentation>
+      <wsdl:input message="tns:GetPersNoFromSfzSoapIn" />
+      <wsdl:output message="tns:GetPersNoFromSfzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoFromICChipNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口20</wsdl:documentation>
+      <wsdl:input message="tns:GetInfoFromICChipNoSoapIn" />
+      <wsdl:output message="tns:GetInfoFromICChipNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersCardInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口24</wsdl:documentation>
+      <wsdl:input message="tns:GetPersCardInfoSoapIn" />
+      <wsdl:output message="tns:GetPersCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口21</wsdl:documentation>
+      <wsdl:input message="tns:GetPhotoSoapIn" />
+      <wsdl:output message="tns:GetPhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLockCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口22</wsdl:documentation>
+      <wsdl:input message="tns:UnLockCardSoapIn" />
+      <wsdl:output message="tns:UnLockCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfoForCie">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口26</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentInfoForCieSoapIn" />
+      <wsdl:output message="tns:GetStudentInfoForCieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseInfoFromICChipNoForJszx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口27</wsdl:documentation>
+      <wsdl:input message="tns:GetCourseInfoFromICChipNoForJszxSoapIn" />
+      <wsdl:output message="tns:GetCourseInfoFromICChipNoForJszxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersInfoForDag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口28</wsdl:documentation>
+      <wsdl:input message="tns:GetPersInfoForDagSoapIn" />
+      <wsdl:output message="tns:GetPersInfoForDagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口29</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoForJwc2SoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoForJwc2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForSbc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口30</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoForSbcSoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoForSbcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptparemtInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口31</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptparemtInfoSoapIn" />
+      <wsdl:output message="tns:GetDeptparemtInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口32</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口33</wsdl:documentation>
+      <wsdl:input message="tns:GetStudentDetailInfoFormSoapIn" />
+      <wsdl:output message="tns:GetStudentDetailInfoFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForFcc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口34</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoForFccSoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoForFccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">公共接口35</wsdl:documentation>
+      <wsdl:input message="tns:GetShuPersInfoForInfoSoapIn" />
+      <wsdl:output message="tns:GetShuPersInfoForInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SLoginServicesSoap" type="tns:SLoginServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidByEd">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidByEd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidAtShuByEd">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidAtShuByEd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidAtShuByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEd">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidStudentByEd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidStudentByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEdAndReturnCardDetail">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidStudentByEdAndReturnCardDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidStudentByEdAndReturnCardDetailShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnum">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidateMobileRandnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateMobileRandnumShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnumAndPersno">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidateMobileRandnumAndPersno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateMobileRandnumAndPersnoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidByDyEd">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidByDyEd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidByDyEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MustValidByDyEd">
+      <soap:operation soapAction="http://passport.shu.edu.cn/MustValidByDyEd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MustValidByDyEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddress">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmailAddressShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuGroup">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuGroupShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForSbc">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForSbc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailInfoForSbcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForDag">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForDag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailInfoForDagShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoFormForSfz">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoFormForSfz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailInfoFormForSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForJwc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoForJwcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddressForInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetEmailAddressForInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmailAddressForInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestUserInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetGuestUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGuestUserInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSfz">
+      <soap:operation soapAction="http://passport.shu.edu.cn/ValidateSfz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersNoFromSfz">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetPersNoFromSfz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersNoFromSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoFromICChipNo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetInfoFromICChipNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInfoFromICChipNoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersCardInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetPersCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersCardInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoto">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetPhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPhotoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockCard">
+      <soap:operation soapAction="http://passport.shu.edu.cn/UnLockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnLockCardShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfoForCie">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentInfoForCie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentInfoForCieShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseInfoFromICChipNoForJszx">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetCourseInfoFromICChipNoForJszx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCourseInfoFromICChipNoForJszxShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersInfoForDag">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetPersInfoForDag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersInfoForDagShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc2">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForJwc2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoForJwc2ShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForSbc">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForSbc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoForSbcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptparemtInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetDeptparemtInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDeptparemtInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetail">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForm">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentDetailInfoFormShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForFcc">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForFcc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoForFccShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForInfo">
+      <soap:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetShuPersInfoForInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SLoginServicesSoap12" type="tns:SLoginServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidByEd">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidByEd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidAtShuByEd">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidAtShuByEd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidAtShuByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEd">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidStudentByEd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidStudentByEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidStudentByEdAndReturnCardDetail">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidStudentByEdAndReturnCardDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidStudentByEdAndReturnCardDetailShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnum">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidateMobileRandnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateMobileRandnumShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRandnumAndPersno">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidateMobileRandnumAndPersno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateMobileRandnumAndPersnoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidByDyEd">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidByDyEd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidByDyEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MustValidByDyEd">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/MustValidByDyEd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MustValidByDyEdShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddress">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetEmailAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmailAddressShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuGroup">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuGroupShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForSbc">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForSbc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailInfoForSbcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForDag">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForDag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailInfoForDagShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoFormForSfz">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoFormForSfz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailInfoFormForSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForJwc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoForJwcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddressForInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetEmailAddressForInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmailAddressForInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestUserInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetGuestUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGuestUserInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSfz">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/ValidateSfz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersNoFromSfz">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetPersNoFromSfz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersNoFromSfzShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoFromICChipNo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetInfoFromICChipNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInfoFromICChipNoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersCardInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetPersCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersCardInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoto">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetPhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPhotoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockCard">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/UnLockCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UnLockCardShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentInfoForCie">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentInfoForCie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentInfoForCieShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseInfoFromICChipNoForJszx">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetCourseInfoFromICChipNoForJszx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCourseInfoFromICChipNoForJszxShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersInfoForDag">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetPersInfoForDag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersInfoForDagShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForJwc2">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForJwc2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoForJwc2ShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForSbc">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForSbc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoForSbcShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptparemtInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetDeptparemtInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDeptparemtInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetail">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentDetailInfoForm">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetStudentDetailInfoForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentDetailInfoFormShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForFcc">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForFcc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoForFccShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuPersInfoForInfo">
+      <soap12:operation soapAction="http://passport.shu.edu.cn/GetShuPersInfoForInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetShuPersInfoForInfoShuSoapHeader" part="ShuSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SLoginServices">
+    <wsdl:port name="SLoginServicesSoap" binding="tns:SLoginServicesSoap">
+      <soap:address location="http://passport.shu.edu.cn:8080/services/sloginservices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SLoginServicesSoap12" binding="tns:SLoginServicesSoap12">
+      <soap12:address location="http://passport.shu.edu.cn:8080/services/sloginservices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

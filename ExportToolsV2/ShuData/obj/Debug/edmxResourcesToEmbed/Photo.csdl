@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="photosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tab_photos">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ph" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="bak" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="photosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tab_photos" EntityType="Self.tab_photos" />
+  </EntityContainer>
+</Schema>

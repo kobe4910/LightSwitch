@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationData" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="InfoesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Infoes)">
+        <MappingFragment StoreEntitySet="InfoesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Native" ColumnName="Native" />
+          <ScalarProperty Name="Politics" ColumnName="Politics" />
+          <ScalarProperty Name="Health" ColumnName="Health" />
+          <ScalarProperty Name="ProJob" ColumnName="ProJob" />
+          <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="PartyDate" ColumnName="PartyDate" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Character" ColumnName="Character" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="XianRen" ColumnName="XianRen" />
+          <ScalarProperty Name="NiRen" ColumnName="NiRen" />
+          <ScalarProperty Name="NiMian" ColumnName="NiMian" />
+          <ScalarProperty Name="WorkExp" ColumnName="WorkExp" />
+          <ScalarProperty Name="RewardPunish" ColumnName="RewardPunish" />
+          <ScalarProperty Name="Exam" ColumnName="Exam" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="FullEdu" ColumnName="FullEdu" />
+          <ScalarProperty Name="FUniMajor" ColumnName="FUniMajor" />
+          <ScalarProperty Name="PartEdu" ColumnName="PartEdu" />
+          <ScalarProperty Name="PUniMajor" ColumnName="PUniMajor" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialRels">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.SocialRel)">
+        <MappingFragment StoreEntitySet="SocialRels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RelTitle" ColumnName="RelTitle" />
+          <ScalarProperty Name="RelName" ColumnName="RelName" />
+          <ScalarProperty Name="RelBirthDate" ColumnName="RelBirthDate" />
+          <ScalarProperty Name="RelParty" ColumnName="RelParty" />
+          <ScalarProperty Name="RelComJob" ColumnName="RelComJob" />
+          <ScalarProperty Name="ChuJiRel_ChuJiInfoes1" ColumnName="ChuJiRel_ChuJiInfoes1" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

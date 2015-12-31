@@ -1,0 +1,17 @@
+D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\_Pvt_Extensions\Microsoft.LightSwitch.Extensions\Server\Reference\zh-Hans\Microsoft.LightSwitch.Extensions.Server.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Client\zh-Hans\Microsoft.LightSwitch.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Client\zh-Hans\Microsoft.LightSwitch.ExportProvider.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.LightSwitch.ManifestService.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.LightSwitch.Model.Xaml.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.LightSwitch.Server.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.LightSwitch.Server.Host.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v4.5\Server\zh-Hans\System.Spatial.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\zh-Hans\System.ServiceModel.DomainServices.EntityFramework.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\zh-Hans\System.ServiceModel.DomainServices.Hosting.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\zh-Hans\System.ServiceModel.DomainServices.Hosting.OData.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\RIA Services\v1.0\Libraries\Server\zh-Hans\System.ServiceModel.DomainServices.Server.resources.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\zh-Hans\EntityFramework.resources.dll

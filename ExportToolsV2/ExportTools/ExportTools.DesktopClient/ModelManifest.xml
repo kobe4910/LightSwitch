@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.DesktopClient\Properties\ApplicationData\InfoesSet.lsml" Checksum="93052B01927E706ACB5B8F6D10D9F4BF2CF9EA836F441EF2B96F66250D2DB6A2" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.DesktopClient\Properties\Client.lsml" Checksum="CB0B2ADEFF5DD77ACBFF8614B81E0FA13BD2BD23E19BE66CF148653F5485477F" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.DesktopClient\Properties\Proxies.lsml" Checksum="C46C8FD0F4B21545B7FFCE3D4781DD05CEBC29D504A0FB5773C62C2EAD9ACCDD" />
+    <Document FullPath="D:\Code\ZuZhiBu\ExportToolsV2\ExportTools\ExportTools.DesktopClient\Screens\InfoesSetListDetail.lsml" Checksum="89E6403946ECD9B0C32F72E72B12CF7D03085B86463BEEBCCD81A59173D549D1" />
+  </Documents>
+</ModelDocumentManifest>

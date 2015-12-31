@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="InfoesSet" EntityType="ApplicationDataStore.Infoes" store:Type="Tables" Schema="dbo" Table="InfoesSet" />
+    <EntitySet Name="SocialRels" EntityType="ApplicationDataStore.SocialRel" store:Type="Tables" Schema="dbo" Table="SocialRels" />
+    <AssociationSet Name="SocialRel_Infoes" Association="ApplicationDataStore.SocialRel_Infoes">
+      <End Role="Infoes" EntitySet="InfoesSet" />
+      <End Role="SocialRel" EntitySet="SocialRels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Infoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PID" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="255" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="Nation" Type="nvarchar" MaxLength="255" />
+    <Property Name="Native" Type="nvarchar" MaxLength="255" />
+    <Property Name="Politics" Type="nvarchar" MaxLength="255" />
+    <Property Name="Health" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProJob" Type="nvarchar" MaxLength="255" />
+    <Property Name="Speciality" Type="nvarchar" MaxLength="255" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkDate" Type="datetime" />
+    <Property Name="PartyDate" Type="datetime" />
+    <Property Name="Duty" Type="nvarchar" MaxLength="255" />
+    <Property Name="Rank" Type="nvarchar" MaxLength="255" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Major" Type="nvarchar" MaxLength="255" />
+    <Property Name="Character" Type="nvarchar" MaxLength="255" />
+    <Property Name="Interest" Type="nvarchar" MaxLength="255" />
+    <Property Name="XianRen" Type="nvarchar" MaxLength="255" />
+    <Property Name="NiRen" Type="nvarchar" MaxLength="255" />
+    <Property Name="NiMian" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkExp" Type="nvarchar" MaxLength="255" />
+    <Property Name="RewardPunish" Type="nvarchar" MaxLength="255" />
+    <Property Name="Exam" Type="nvarchar" MaxLength="255" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="255" />
+    <Property Name="FullEdu" Type="nvarchar" MaxLength="255" />
+    <Property Name="FUniMajor" Type="nvarchar" MaxLength="255" />
+    <Property Name="PartEdu" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUniMajor" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SocialRel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RelTitle" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RelName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RelBirthDate" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RelParty" Type="nvarchar" MaxLength="255" />
+    <Property Name="RelComJob" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ChuJiRel_ChuJiInfoes1" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="SocialRel_Infoes">
+    <End Role="Infoes" Type="ApplicationDataStore.Infoes" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="SocialRel" Type="ApplicationDataStore.SocialRel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Infoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SocialRel">
+        <PropertyRef Name="ChuJiRel_ChuJiInfoes1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

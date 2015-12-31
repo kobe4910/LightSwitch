@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="photosModelStoreContainer" CdmEntityContainer="photosEntities">
+    <EntitySetMapping Name="tab_photos">
+      <EntityTypeMapping TypeName="photosModel.tab_photos">
+        <MappingFragment StoreEntitySet="tab_photos">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="ph" ColumnName="ph" />
+          <ScalarProperty Name="bak" ColumnName="bak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

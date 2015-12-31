@@ -1,0 +1,11 @@
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\ShuData.dll.config
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\ShuData.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\ShuData.pdb
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\EntityFramework.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\EntityFramework.xml
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\obj\Debug\ShuData.csprojResolveAssemblyReference.cache
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\obj\Debug\ShuData.dll
+D:\Code\ZuZhiBu\ExportToolsV2\ShuData\obj\Debug\ShuData.pdb

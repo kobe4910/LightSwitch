@@ -1,0 +1,12 @@
+﻿<OutOfBrowserSettings ShortName="ExportTools.DesktopClient" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>ExportTools.DesktopClient</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="ExportTools.DesktopClient" Top="0" Left="0" WindowStartupLocation="Manual" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="32,32">Resources/bebo32.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>
